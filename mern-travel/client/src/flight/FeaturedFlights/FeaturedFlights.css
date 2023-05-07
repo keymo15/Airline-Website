@@ -1,0 +1,96 @@
+.flightContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1024px;
+  min-height: 300px;
+  font-weight: 600;
+  padding-bottom: 2rem;
+}
+
+.flightLogo {
+  width: 40px;
+  height: 40px;
+}
+
+.flightObject {
+  display: grid;
+  grid-template-columns: minmax(50px, 50px) minmax(100px, 1fr) minmax(
+      150px,
+      1fr
+    ) minmax(100px, 1fr) minmax(100px, 1fr) minmax(100px, 1fr);
+
+  gap: 16px;
+  padding: 1rem;
+  border: 1px solid #003580;
+}
+
+.flightName {
+  width: 120px;
+  display: flex;
+  align-items: center;
+}
+
+.flightDuration {
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.flightLocations {
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flightStops {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flightPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.flightStops > span:last-child {
+  font-size: 12px;
+}
+
+.flightLocations > span:last-child {
+  font-size: 12px;
+}
+.flightPrice > span:last-child {
+  font-size: 12px;
+}
+
+/* Target the first child div */
+.flightObject:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+/* Target the last child div */
+.flightObject:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+/* Target all divs except the first child */
+.flightObject + .flightObject {
+  border-top: 0px solid #003580;
+}
+
+/* Target all divs except the last child */
+.flightObject:not(:last-child) {
+  border-bottom: 1px solid #003580;
+}
+/* Target the case where there is only one child div */
+.flightObject:only-child {
+  border-radius: 8px;
+}

@@ -1,0 +1,106 @@
+.listContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.listWrapper {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  gap: 20px;
+  padding-inline: 2rem;
+}
+
+.listSearch {
+  flex: 1;
+  /* background-color: #7a5e00; */
+  margin-top: 5rem;
+  padding: 16px;
+  border: 2px solid #101275;
+  border-radius: 10px;
+  position: sticky;
+  top: 10px;
+  min-width: 250px;
+  height: max-content;
+}
+
+.lsTitle{
+  font-size: 20px;
+  font-weight: 700;
+  color: #101275;
+  margin-bottom: 10px;
+}
+
+.lsItem{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.lsItem>label{
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(53, 53, 53);
+}
+
+.lsItem>input{
+  height: 30px;
+  border: 1px solid #101275;
+  border-radius: 3px;
+  padding: 5px;
+}
+.lsItem>span{
+  height: 30px;
+  padding: 5px;
+  border: 1px solid #101275;
+  border-radius: 3px;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.calender-container{
+  position: relative;
+}
+.lsItem>.calender{
+  position: absolute;
+  top: 65px;
+  left: 0px;
+
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.lsOptions{
+  padding: 5px 10px;
+}
+
+.lsOptionItem{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  /* color: white; */
+  font-size: 12px;
+}
+
+.lsOptionInput{
+  width: 50px;
+}
+
+.listSearch>button{
+  padding: 10px;
+  background-color: #101275;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  width: 100%;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.listResult {
+  flex: 3;
+}

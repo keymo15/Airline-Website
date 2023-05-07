@@ -1,0 +1,210 @@
+// @use "../../sass/abstracts" as *;
+
+$primary-color: #003580;
+$danger-color: #dc3545;
+
+@mixin flex-center($direction: row) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @if $direction == col {
+    flex-direction: column;
+  }
+}
+
+.AuthForm {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  // justify-content: center;
+  margin-top: 7rem;
+  height: 100vh;
+  // background-image: url("../../Assets/bg-image.png");
+  background-size: cover;
+  background-position: center;
+
+  .logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 150px;
+  }
+
+  .auth-form {
+    position: relative;
+    background-color: white;
+    padding: 6rem 4rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    .form-header {
+      position: absolute;
+      top: -2rem;
+      left: 50%;
+      transform: translateX(-50%);
+
+      @include flex-center;
+      height: 5rem;
+      width: 90%;
+
+      background-color: $primary-color;
+      border-radius: 10px;
+
+      h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-align: center;
+        color: white;
+      }
+    }
+    .reset-instructions {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+  .form-body {
+    .form-group {
+      display: flex;
+      margin-bottom: 5px;
+      flex-direction: column;
+      min-width: 350px;
+      position: relative;
+
+      .is-invalid {
+        border: 2px solid $danger-color;
+      }
+      .is-invalid-label {
+        color: $danger-color;
+      }
+
+      .invalid-feedback {
+        position: absolute;
+        top: 59px;
+
+        right: 0px;
+        font-size: 12px;
+        color: $danger-color;
+      }
+    }
+    .link {
+      font-weight: 600;
+    }
+  }
+
+  input {
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+  }
+
+  label {
+    color: $primary-color;
+    font-weight: 700;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    font-size: 14px;
+    padding: 0px 5px;
+    background-color: white;
+
+    transition: all 0.2s ease-out;
+    pointer-events: none;
+  }
+
+  .label-up {
+    top: 2px;
+    left: 7px;
+    font-size: 12px;
+    color: $primary-color;
+    background-color: white;
+    padding: 0 5px;
+  }
+
+  span {
+    font-size: 12px;
+    padding: 3px;
+    color: red;
+    display: none;
+  }
+
+  input:focus {
+    border: 2px solid $primary-color;
+    outline: none;
+  }
+
+  input:focus ~ label,
+  input:not(:focus):valid ~ label {
+    top: 2px;
+    left: 7px;
+    font-size: 12px;
+    //   color: $primary-color;
+  }
+
+  input:focus ~ label {
+    color: $primary-color;
+    background-color: white;
+    padding: 0 5px;
+  }
+
+  .signup-buttons {
+    display: flex;
+    white-space: nowrap;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 2rem;
+    button {
+      width: 60%;
+      // height: 50px;
+      padding: 10px;
+      border: none;
+      background-color: $primary-color;
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .register-btn {
+      background-color: rgba(206, 149, 3, 255);
+    }
+  }
+
+  footer {
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    background: white;
+  }
+}
+
+//Remove blue background on autocomplete
+.AuthForm {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  }
+
+  .error-msg{
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }  
+}

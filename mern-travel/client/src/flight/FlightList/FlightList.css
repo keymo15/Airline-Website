@@ -1,0 +1,21 @@
+.flight-listContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.flight-listContainer .headerSearch {
+  position: static;
+  align-self: center;
+  width: 100%;
+  max-width: 960px;
+}
+
+.flight-listContainer .listWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1024px;
+  gap: 20px;
+  padding-inline: 2rem;
+}

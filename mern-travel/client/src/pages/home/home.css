@@ -1,0 +1,17 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.homeContainer > * {
+  padding-inline: 2rem;
+}
+.homeContainer > .footer {
+  padding-inline: 0rem;
+}
+
+.homeTitle {
+  margin-top: 3rem;
+  font-size: 25px;
+}

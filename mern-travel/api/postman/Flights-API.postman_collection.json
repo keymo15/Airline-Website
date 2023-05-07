@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "d7c3fc17-83e3-41ab-b429-0c71177980d0",
+		"name": "Flight Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25410695"
+	},
+	"item": [
+		{
+			"name": "get all flights",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/flights",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flights"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get flight by origin and destination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/flights?origin=Canada&destination=Las Vegas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flights"
+					],
+					"query": [
+						{
+							"key": "origin",
+							"value": "Canada"
+						},
+						{
+							"key": "destination",
+							"value": "Las Vegas"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add flight",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"flight_number\": 3,\n  \"origin\": \"Canada\",\n  \"destination\": \"Las Vegas\",\n  \"departure_time\": \"10:00\",\n  \"arrival_time\": \"12:20\",\n  \"ticket_price\": 100.0,\n  \"company_name\": \"Air Transat\",\n  \"company_image_url\": \"https://www.jetblue.com/magnoliapublic/dam/ui-assets/imagery/info-assets/logos-misc/JetBlue-og-image.jpg\",\n  \"redirect_url\": \"https://www.jetblue.com/\",\n  \"total_time\": \"2 hr\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/flights/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flights",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update flight",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"flight_number\": 2,\n        \"origin\": \"Canada\",\n        \"destination\": \"London\",\n        \"departure_time\": \"11:00\",\n        \"arrival_time\": \"12:20\",\n        \"ticket_price\": 100.0,\n        \"company_name\": \"Air Transat\",\n        \"company_image_url\": \"https://img1.pnghut.com/t/23/20/24/XgeFitpwjV/company-logo-airline-vacation-organization.jpg\",\n        \"redirect_url\": \"www.airtransat.com\",\n        \"total_time\": \"1 hr 20 min\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/flights/update/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flights",
+						"update",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/flights/delete/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"flights",
+						"delete",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
